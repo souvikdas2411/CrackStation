@@ -5,7 +5,7 @@ A vanilla Crackstation which can crack any single-character password, which matc
 ## Sample test data
 
 ```bash
-crackStation(digest: "Your SHA1 Digest")
+crack(password: "Your SHA1 Digest")
 ```
 
 | Input to crack station: the encrypted password | Crack station’s output: the plain-text password. |
@@ -21,7 +21,7 @@ public func generateHash() async -> Bool
 
 The function below returns the plain-text password, if not found the function returns nil.
 ```swift
-public func crack(digest: String) -> String?
+public func crack(password: String) -> String?
 ```
 
 If you are adding our package as a dependency look below.
