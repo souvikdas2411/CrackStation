@@ -53,7 +53,7 @@ public class CrackStation {
     public func crack(password: String) -> String? {
         if UserDefaults.standard.object(forKey: "hashDict") != nil {
             let hashDict = UserDefaults.standard.object(forKey: "hashDict") as? [String:String]
-            return hashDict?["SHA1 digest: \(digest)"]
+            return hashDict?["SHA1 digest: \(password)"]
         }
         return nil
     }
