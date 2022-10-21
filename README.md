@@ -31,7 +31,7 @@ import CrackStation
 \\\Make sure your are executing generateHash() before testing crack(digest: "")
 CrackStation().generateHash()
 ...
-CrackStation().crack(digest: "Your SHA digest")
+CrackStation().crack(password: "Your SHA digest")
 ```
 
 ## How to generate the SHA1 digest?
