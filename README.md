@@ -19,15 +19,16 @@ The function below sets up the CrackStation dictionary. It returns true if a dic
 public func generateHash() async -> Bool
 ```
 
-The function below returns the plain-text password else the function returns nil.
+The function below returns the plain-text password, if not found the function returns nil.
 ```swift
 public func crack(digest: String) -> String?
 ```
 
 If you are adding our package as a dependency look below.
 ```swift
-import MyLibrary
+import CrackStation
 ...
+\\\Make sure your are executing generateHash() before testing crack(digest: "")
 CrackStation().generateHash()
 ...
 CrackStation().crack(digest: "Your SHA digest")
