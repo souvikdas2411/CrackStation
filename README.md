@@ -28,7 +28,7 @@ If you are adding our package as a dependency look below.
 ```swift
 import CrackStation
 ...
-\\\Make sure your are executing generateHash() before testing crack(digest: "")
+\\\Make sure your are executing generateHash() before testing crack(password: "")
 CrackStation().generateHash()
 ...
 CrackStation().crack(password: "Your SHA digest")
