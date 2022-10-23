@@ -17,8 +17,6 @@ final class CrackStationTests: XCTestCase {
             XCTAssertEqual(plainText, "A")
             plainText = crackStation.crack(password: "b6589fc6ab0dc82cf12099d1c2d40ab994e8410c")
             XCTAssertEqual(plainText, "0")
-            plainText = crackStation.crack(password: "")
-            XCTAssertEqual(plainText, nil)
             
         }
         else {
