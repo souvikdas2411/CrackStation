@@ -27,10 +27,10 @@ public class CrackStation {
 //            UserDefaults.standard.set(hashDict, forKey: "hashDict")
 //        }
         
-        // Not  using
-        /// -------------> if UserDefaults.standard.object(forKey: "hashDict") == nil <-------------
-        // because if the cached file gets damaged somehow the user should be able to generate a new hashDict
         
+        /// Not  using
+        /// -------------> if UserDefaults.standard.object(forKey: "hashDict") == nil <-------------
+        /// because if the cached file gets damaged somehow the user should be able to generate a new hashDict
         for a in alphabet {
                 hashDict[encryptUsingSha1(from: a)] = a
                 hashDict[encryptUsingSha1(from: a.uppercased())] = a.uppercased()
@@ -51,6 +51,9 @@ public class CrackStation {
     /// Either returns the cracked plain-text password
     /// or, if unable to crack, then returns nil.
     public func crack(password: String) -> String? {
+        if (password.count == 0) {
+            return nil
+        }
         if UserDefaults.standard.object(forKey: "hashDict") != nil {
             let hashDict = UserDefaults.standard.object(forKey: "hashDict") as? [String:String]
             return hashDict?["SHA1 digest: \(password)"]

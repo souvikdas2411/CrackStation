@@ -10,9 +10,16 @@ final class CrackStationTests: XCTestCase {
         
         if (result){
             print("Hash dict created")
-            let plainText = crackStation.crack(password: "e9d71f5ee7c92d6dc9e92ffdad17b8bd49418f98")
+            var plainText = crackStation.crack(password: "86f7e437faa5a7fce15d1ddcb9eaeaea377667b8")
             XCTAssertEqual(result, true)
-            XCTAssertEqual(plainText, "b")
+            XCTAssertEqual(plainText, "a")
+            plainText = crackStation.crack(password: "6dcd4ce23d88e2ee9568ba546c007c63d9131c1b")
+            XCTAssertEqual(plainText, "A")
+            plainText = crackStation.crack(password: "b6589fc6ab0dc82cf12099d1c2d40ab994e8410c")
+            XCTAssertEqual(plainText, "0")
+            plainText = crackStation.crack(password: "")
+            XCTAssertEqual(plainText, nil)
+            
         }
         else {
             print("Some error occured. Please try again!")
