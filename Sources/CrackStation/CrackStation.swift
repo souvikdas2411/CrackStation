@@ -1,14 +1,14 @@
 import Foundation
 import CryptoKit
 
-public class CrackStation {
-    
+public class CrackStation: Decrypter {
+        
     private let alphabet: [String] = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
     private let numbers: [String] = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
     
     private var hashDict:[String:String]
-    
-    public init() {
+
+    public required init() {
         self.hashDict = [:]
     }
     
@@ -50,11 +50,20 @@ public class CrackStation {
     
     /// Either returns the cracked plain-text password
     /// or, if unable to crack, then returns nil.
-    public func crack(password: String) -> String? {
+//    public func crack(password: String) -> String? {
+//        if UserDefaults.standard.object(forKey: "hashDict") != nil {
+//            let hashDict = UserDefaults.standard.object(forKey: "hashDict") as? [String:String]
+//            return hashDict?["SHA1 digest: \(password)"]
+//        }
+//        return nil
+//    }
+    
+    public func decrypt(shaHash: String) -> String? {
         if UserDefaults.standard.object(forKey: "hashDict") != nil {
             let hashDict = UserDefaults.standard.object(forKey: "hashDict") as? [String:String]
-            return hashDict?["SHA1 digest: \(password)"]
+            return hashDict?["SHA1 digest: \(shaHash)"]
         }
         return nil
     }
+
 }
