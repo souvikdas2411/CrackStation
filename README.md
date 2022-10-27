@@ -4,7 +4,9 @@ A vanilla crack station that is able to crack any password up to two characters 
 
 # Why might someone want to use it or care?
 
-Firstly it is cool to crack hashes. You can use this to raise awareness about insecure password storage in web applications, and to provide guidance to implementors of user authentication systems. We make it easier for security researchers to demonstrate why password storage solutions, like non-salted hashing, are insecure. 
+* Firstly it is cool to crack hashes. 
+* You can use this to raise awareness about insecure password storage in web applications, and to provide guidance to implementors of user authentication systems. 
+* We make it easier for security researchers to demonstrate why password storage solutions, like non-salted hashing, are insecure. 
 
 ## Sample test data
 
