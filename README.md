@@ -1,17 +1,21 @@
-# CrackStation POC1 CS561 Week 5
+# CrackStation POC2 CS561 Week 6
 
-A vanilla Crackstation which can crack any single-character password, which matches the regular expression [A-Za-z0-9] and is encrypted using the SHA-1 cryptographic hash function. 
+A vanilla crack station that is able to crack any password up to two characters in length, which (a) matches either the regular expression[A-Za-z0-9]{1,2} and (b) is encrypted using SHA-1 or SHA-256.  So, everything POC v1 can do plus a bit more.
+
+# Why might someone want to use it or care?
+
+Firstly it is cool to crack hashes. You can use this crackstation to c  
 
 ## Sample test data
 
 ```bash
-crack(password: "Your SHA1 Digest")
+decrypt(shaHash: String)
 ```
 
 | Input to crack station: the encrypted password | Crack station’s output: the plain-text password. |
 | ---------------------------------------------- | ------------------------------------------------ |
-| 86f7e437faa5a7fce15d1ddcb9eaeaea377667b8       | a       											|
-| 902ba3cda1883801594b6e1b452790cc53948fda       | 7       											|
+| ca978112ca1bbdcafac231b39a23dc4da786eff8147c4e72b9807785afee48bb       | a       											|
+| 7902699be42c8a8e46fbbb4501726517e86b22c56a189f7625a6da49081b2451       | 7       											|
 
 ## How to use our CrackStation?
 The function below returns the plain-text password, if not found the function returns nil.
