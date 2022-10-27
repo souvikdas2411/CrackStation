@@ -14,24 +14,16 @@ crack(password: "Your SHA1 Digest")
 | 902ba3cda1883801594b6e1b452790cc53948fda       | 7       											|
 
 ## How to use our CrackStation?
-The function below sets up the CrackStation dictionary. It returns true if a dictionary is successfully generated and vice versa.
-```swift
-public func generateHash() async -> Bool
-```
-
 The function below returns the plain-text password, if not found the function returns nil.
 ```swift
-public func crack(password: String) -> String?
+public func decrypt(shaHash: String) -> String?
 ```
 
 If you are adding our package as a dependency look below.
 ```swift
 import CrackStation
 ...
-\\\Make sure your are executing generateHash() before testing crack(password: "")
-CrackStation().generateHash()
-...
-CrackStation().crack(password: "Your SHA digest")
+decrypt(shaHash: "Your hash")
 ```
 
 ## How to generate the SHA1 digest?

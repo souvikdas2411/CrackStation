@@ -14,23 +14,16 @@ public class CrackStation: Decrypter {
     
     private func encryptUsingSha1(from input: String) -> String {
         let inputData = Data(input.utf8)
-        let output = Insecure.SHA1.hash(data: inputData)
-        return output.description
+        if #available(macOS 10.15, *) {
+            let output = Insecure.SHA1.hash(data: inputData)
+            return output.description
+        } else {
+            return "Need macOS>10.15 for generating hash"
+        }
+
     }
     
-    public func generateHash() async -> Bool{
-//        if UserDefaults.standard.object(forKey: "hashDict") == nil {
-//            for a in alphabet {
-//                hashDict[encryptUsingSha1(from: a)] = a
-//                hashDict[encryptUsingSha1(from: a.uppercased())] = a.uppercased()
-//            }
-//            UserDefaults.standard.set(hashDict, forKey: "hashDict")
-//        }
-        
-        
-        /// Not  using
-        /// -------------> if UserDefaults.standard.object(forKey: "hashDict") == nil <-------------
-        /// because if the cached file gets damaged somehow the user should be able to generate a new hashDict
+    private func generateHash() -> Bool{
         for a in alphabet {
                 hashDict[encryptUsingSha1(from: a)] = a
                 hashDict[encryptUsingSha1(from: a.uppercased())] = a.uppercased()
@@ -48,17 +41,14 @@ public class CrackStation: Decrypter {
         }
     }
     
-    /// Either returns the cracked plain-text password
-    /// or, if unable to crack, then returns nil.
-//    public func crack(password: String) -> String? {
-//        if UserDefaults.standard.object(forKey: "hashDict") != nil {
-//            let hashDict = UserDefaults.standard.object(forKey: "hashDict") as? [String:String]
-//            return hashDict?["SHA1 digest: \(password)"]
-//        }
-//        return nil
-//    }
-    
     public func decrypt(shaHash: String) -> String? {
+        if UserDefaults.standard.object(forKey: "hashDict") == nil {
+            if(generateHash()) {
+                let hashDict = UserDefaults.standard.object(forKey: "hashDict") as? [String:String]
+                return hashDict?["SHA1 digest: \(shaHash)"]
+            }
+            return nil
+        }
         if UserDefaults.standard.object(forKey: "hashDict") != nil {
             let hashDict = UserDefaults.standard.object(forKey: "hashDict") as? [String:String]
             return hashDict?["SHA1 digest: \(shaHash)"]
