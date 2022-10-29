@@ -34,10 +34,10 @@ decrypt(shaHash: "Your hash")
 
 ## Latest stable release
 If you have swift-tools: 5.7(same as the test-harness)
-**1.1.1**
+* **1.1.1**
 
 If you have swift-tools: 5.6
-**1.1.0**
+* **1.1.0**
 
 ## About author
 Hi I am **Souvik**! :) 
