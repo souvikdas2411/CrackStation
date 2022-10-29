@@ -32,8 +32,14 @@ import CrackStation
 decrypt(shaHash: "Your hash")
 ```
 
-## How to generate the SHA1 digest?
+## Latest stable release
+**1.1.0**
 
-```bash
-echo -n "your string" | sha1sum
+## About author
+Hi I am **Souvik**! :) 
+
+## What if you damage the hash->plain text dictionary?
+Just run this:
+```swift
+public func generateHash() -> Bool
 ```
