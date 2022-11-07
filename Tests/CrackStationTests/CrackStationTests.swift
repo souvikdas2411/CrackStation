@@ -11,8 +11,8 @@ final class CrackStationTests: XCTestCase {
         XCTAssertEqual(plainText, "A")
         plainText = crackStation.decrypt(shaHash: "66abb21cab9931cf7033eaf5a1eb04924cd88b0a30219b7b6118700167e4be18")
         XCTAssertEqual(plainText, "1r")
-        plainText = crackStation.decrypt(shaHash: "58bb119c35513a451d24dc20ef0e9031ec85b35bfc919d263e7e5d9868909cb5")
-        XCTAssertEqual(plainText, "AA")
+        plainText = crackStation.decrypt(shaHash: "ca5ba87c93d42f8a45c1e0f569bba8bac92c80f4ce6c864bd44d136572411b7e")
+        XCTAssertEqual(plainText, "ab1")
         
         
         let milesToPoint = ["point1":120.0,"point2":50.0,"point3":70.0]
