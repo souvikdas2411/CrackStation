@@ -8,7 +8,7 @@ arr = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o"
 combs = {}
 temp = ""
 
-for i in list(itertools.combinations_with_replacement(arr, 2)):
+for i in list(itertools.product(arr, repeat=2)):
 	for j in i:
 		temp = temp + j
 	combs[hashlib.sha256(temp.encode()).hexdigest()] = temp

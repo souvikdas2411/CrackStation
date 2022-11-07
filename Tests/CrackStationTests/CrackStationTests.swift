@@ -9,8 +9,8 @@ final class CrackStationTests: XCTestCase {
         XCTAssertEqual(plainText, "aa")
         plainText = crackStation.decrypt(shaHash: "6dcd4ce23d88e2ee9568ba546c007c63d9131c1b")
         XCTAssertEqual(plainText, "A")
-        plainText = crackStation.decrypt(shaHash: "b6589fc6ab0dc82cf12099d1c2d40ab994e8410c")
-        XCTAssertEqual(plainText, "0")
+        plainText = crackStation.decrypt(shaHash: "66abb21cab9931cf7033eaf5a1eb04924cd88b0a30219b7b6118700167e4be18")
+        XCTAssertEqual(plainText, "1r")
         plainText = crackStation.decrypt(shaHash: "58bb119c35513a451d24dc20ef0e9031ec85b35bfc919d263e7e5d9868909cb5")
         XCTAssertEqual(plainText, "AA")
         
