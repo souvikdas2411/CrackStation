@@ -33,7 +33,7 @@ decrypt(shaHash: "Your hash")
 ```
 
 ## Latest stable release
-1.1.5
+**1.1.5**
 
 ## About author
 Hi I am **Souvik**! :) 
