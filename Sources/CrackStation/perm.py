@@ -11,19 +11,19 @@ temp = ""
 for i in list(itertools.product(arr, repeat=3)):
     for j in i:
         temp = temp + j
-    combs[hashlib.sha256(temp.encode()).hexdigest()] = temp
+#    combs[hashlib.sha256(temp.encode()).hexdigest()] = temp
     combs[hashlib.sha1(temp.encode()).hexdigest()] = temp
     temp = ""
 
 for i in list(itertools.product(arr, repeat=2)):
 	for j in i:
 		temp = temp + j
-	combs[hashlib.sha256(temp.encode()).hexdigest()] = temp
+#	combs[hashlib.sha256(temp.encode()).hexdigest()] = temp
 	combs[hashlib.sha1(temp.encode()).hexdigest()] = temp
 	temp = ""
 
 for i in arr:
-	combs[hashlib.sha256(i.encode()).hexdigest()] = i
+#	combs[hashlib.sha256(i.encode()).hexdigest()] = i
 	combs[hashlib.sha1(i.encode()).hexdigest()] = i
 
 with open('data.json', 'w', encoding='utf-8') as f:

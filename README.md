@@ -1,6 +1,6 @@
-# CrackStation POC2 CS561 Week 6
+# CrackStation MVP CS561 
 
-A vanilla crack station that is able to crack any password up to two characters in length, which (a) matches either the regular expression[A-Za-z0-9]{1,2} and (b) is encrypted using SHA-1 or SHA-256.  So, everything POC v1 can do plus a bit more. 
+A vanilla crack station that is able to crack any password up to three characters in length, which (a) matches either the regular expression[A-Za-z0-9]{1,2} and (b) is encrypted using SHA-1.  So, everything POC v2 can do plus a bit more. 
 
 # Why might someone want to use it or care?
 
