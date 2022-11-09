@@ -37,9 +37,3 @@ decrypt(shaHash: "Your hash")
 
 ## About author
 Hi I am **Souvik**! :) 
-
-## What if you damage the hash->plain text dictionary?
-Just run this:
-```swift
-public func generateHash() -> Bool
-```
