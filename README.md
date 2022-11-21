@@ -23,7 +23,7 @@ Once you have your Swift package set up, add CrackStation to the list of depende
 
 ## Usage
 ## The API
-The function below returns the plain-text password, if not found the function returns nil.
+The CrackStation constructor.
 ```swift
 public required init() {
     self.hashDict = [:]
@@ -40,6 +40,7 @@ public required init() {
     }
 }
 ```
+The function below returns the plain-text password, if not found the function returns ```swift nil ```.
 ```swift
 public func decrypt(shaHash: String) -> String?
 ```
