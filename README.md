@@ -10,7 +10,7 @@ A vanilla crack station that is able to crack any unsalted password up to three 
 
 # Mission Statement
 
-This project is meant for educational purposes only. This project does not endorse unethical hacking in any way. We aim to raise awarness about insecure password storage and how easy it is to crack unsalted hashes. 
+This project is meant for educational purposes only. We aim to raise awarness about insecure password storage and how easy it is to crack unsalted hashes. This project can be used by both professionals and people interested in cryptography to understand how brute-forcing works on unsalted hashes. This project does not endorse unethical hacking in any way. Stay Cyber-Safe! Update your passwords often! 
 
 # Installation
 
