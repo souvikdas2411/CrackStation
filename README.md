@@ -6,9 +6,13 @@ A vanilla crack station that is able to crack any unsalted password up to three 
 
 * Firstly it is cool to crack hashes. 
 * You can use this to raise awareness about insecure password storage in web applications, and to provide guidance to implementors of user authentication systems. 
-* We make it easier for security researchers to demonstrate why password storage solutions, like non-salted hashing, are insecure. 
+* We make it easier for security researchers to demonstrate why password storage solutions, like non-salted hashing, are insecure.
 
-## Installation
+# Mission Statement
+
+This project is meant for educational purposes only. This project does not endorse unethical hacking in any way. We aim to raise awarness about insecure password storage and how easy it is to crack unsalted hashes. 
+
+# Installation
 
 ## Swift Package Manager
 The [Swift Package Manager](https://www.swift.org/package-manager) is "a tool for managing the distribution of Swift code. It's integrated with the Swift build system to automate the process of downloading, compiling, and linking dependencies."
@@ -21,7 +25,7 @@ Once you have your Swift package set up, add CrackStation to the list of depende
     ]
 ```
 
-## Usage
+# Usage
 ## The API
 The CrackStation constructor.
 ```swift
@@ -61,5 +65,5 @@ final class CrackStationTests: XCTestCase {
 }
 ```
 
-## Author
+# Author
 Hi I am **Souvik**! :) 
