@@ -1,39 +1,47 @@
-# CrackStation MVP CS561 
+# CrackStation, a Decrypter implementation 
 
-A vanilla crack station that is able to crack any password up to three characters in length, which (a) matches either the regular expression[A-Za-z0-9]{1,2} and (b) is encrypted using SHA-1.  So, everything POC v2 can do plus a bit more. 
+A vanilla crack station that is able to crack any unsalted password up to three characters in length, which (a) matches either the regular expression[A-Za-z0-9?!]{1,3} and (b) is encrypted using SHA-1 or SHA-256.
 
-# Why might someone want to use it or care?
+# Overview
 
 * Firstly it is cool to crack hashes. 
 * You can use this to raise awareness about insecure password storage in web applications, and to provide guidance to implementors of user authentication systems. 
 * We make it easier for security researchers to demonstrate why password storage solutions, like non-salted hashing, are insecure. 
 
-## Sample test data
+## Installation
 
-```bash
-decrypt(shaHash: String)
+## Swift Package Manager
+The Swift Package Manager is "a tool for managing the distribution of Swift code. It's integrated with the Swift build system to automate the process of downloading, compiling, and linking dependencies."
+Once you have your Swift package set up, add CrackStation to the list of dependencies in your Package, swift file:
+
+```swift
+    dependencies: [
+        .package(url: "git@github.com:souvikdas2411/CrackStation.git", from: "1.2.0"),
+    ]
 ```
 
-| Input to crack station: the encrypted password | Crack station’s output: the plain-text password. |
-| ---------------------------------------------- | ------------------------------------------------ |
-| ca978112ca1bbdcafac231b39a23dc4da786eff8147c4e72b9807785afee48bb       | a       											|
-| 7902699be42c8a8e46fbbb4501726517e86b22c56a189f7625a6da49081b2451       | 7       											|
-
-## How to use our CrackStation?
+## Usage
+## The API
 The function below returns the plain-text password, if not found the function returns nil.
 ```swift
 public func decrypt(shaHash: String) -> String?
 ```
-
-If you are adding our package as a dependency look below.
+## An example
 ```swift
+import XCTest
 import CrackStation
-...
-decrypt(shaHash: "Your hash")
+
+final class CrackStationTests: XCTestCase {
+    func testCrackStation() async {
+    
+        let crackStation = CrackStation()
+        
+        plainText = crackStation.decrypt(shaHash: "cbf2a7ed1893d2686ae9ec75712d340c8b9f50e7bcd7698ee43ea2e3b42e3911")
+        XCTAssertEqual(plainText, "ab!")
+        
+    }
+}
 ```
 
-## Latest stable release
-**1.1.5**
-
-## About author
+## Author
 Hi I am **Souvik**! :) 
