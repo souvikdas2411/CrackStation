@@ -40,7 +40,7 @@ public required init() {
     }
 }
 ```
-The function below returns the plain-text password, if not found the function returns ```swift nil ```.
+The function below returns the plain-text password, if not found the function returns ```nil```.
 ```swift
 public func decrypt(shaHash: String) -> String?
 ```
