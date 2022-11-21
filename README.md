@@ -25,6 +25,22 @@ Once you have your Swift package set up, add CrackStation to the list of depende
 ## The API
 The function below returns the plain-text password, if not found the function returns nil.
 ```swift
+public required init() {
+    self.hashDict = [:]
+    if let path = Bundle.module.url(forResource: "data", withExtension: "json") {
+        do {
+            let data = try Data(contentsOf: path)
+            let jsonResult = try JSONSerialization.jsonObject(with: data)
+            if let jsonResult = jsonResult as? [String:String] {
+                self.hashDict = jsonResult
+            }
+        } catch {
+            self.hashDict = [:]
+        }
+    }
+}
+```
+```swift
 public func decrypt(shaHash: String) -> String?
 ```
 ## An example
