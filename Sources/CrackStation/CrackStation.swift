@@ -21,12 +21,7 @@ public class CrackStation: Decrypter {
     }
     
     public func decrypt(shaHash: String) -> String? {
-        if(hashDict[shaHash] != nil) {
-            return hashDict[shaHash]
-        }
-        else {
-            return nil
-        }
+        return hashDict[shaHash]
         
     }
 }
