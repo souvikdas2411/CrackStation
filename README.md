@@ -40,7 +40,7 @@ public func decrypt(shaHash: String) -> String?
 import CrackStation
 
 let crackStation = CrackStation()
-plainText = crackStation.decrypt(shaHash: "cbf2a7ed1893d2686ae9ec75712d340c8b9f50e7bcd7698ee43ea2e3b42e3911")
+let plainText = crackStation.decrypt(shaHash: "cbf2a7ed1893d2686ae9ec75712d340c8b9f50e7bcd7698ee43ea2e3b42e3911")
 assert(plainText, "ab!")
 ```
 
